@@ -1,0 +1,11 @@
+{
+  "name": "Mysql",
+  "connector": "mysql",
+  "url": "mysql://picam:ALEXandeur95210@localhost/BD_PICAM",
+  "socketPath": "/home/rangom/Documents/Programmation/Projets/Mysql/run/mysqld.sock",
+  "host": "localhost",
+  "port": "3306",
+  "user": "picam",
+  "password": "ALEXandeur95210",
+  "database": "BD_PICAM"
+}

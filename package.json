@@ -6,11 +6,15 @@
   "directories": {
     "test": "test"
   },
+  "type": "commonjs",
   "scripts": {
     "test": "mocha test/test.js",
     "start": "node ./bin/www.js",
     "restart": "DEBUG=api-picam:* nodemon bin/www.js",
-    "restart debug": "DEBUG=* nodemon bin/www.js"
+    "restart debug": "DEBUG=* nodemon bin/www.js",
+    "eslint-src": "eslint --fix app.js bin/www.js src/datasources",
+    "prettier": "prettier \"src/**/*.js\"",
+    "prettier-test": "prettier \"test/**/*.js\""
   },
   "keywords": [
     "API"
@@ -18,11 +22,14 @@
   "author": "Alexandre Rangom",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
     "mocha": "^7.1.1",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "prettier": "2.0.5"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",

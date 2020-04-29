@@ -1,0 +1,40 @@
+$schema: http://json-schema.org/draft-07/schema#
+$id: "http://localhost/user.schema.json"
+title: User
+description: Données d'un utilisateur
+type: object
+properties:
+    id:
+        description: Numéro d'identification
+        type: integer
+
+    firstname:
+        description: Prenom de l'utilisateur
+        type: string
+
+    lastname:
+        description: Nom de l'utilisateur
+        type: string
+
+    nickname:
+        description: Nom qui sera affiché et utilisé lors des connexions de l'utilisateur
+        type: string
+
+    pass:
+        description: Mot de passe de l'utilisateur
+        type: string
+
+    email:
+        description: Email de l'utilisateur
+        type: string
+
+    record_date:
+        description: Date d'enrengistrement
+        type: string
+required:
+    - firstname
+    - lastname
+    - nickname
+    - pass
+    - email
+

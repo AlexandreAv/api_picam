@@ -1,0 +1,31 @@
+$schema: http://json-schema.org/draft-07/schema#
+$id: "http://localhost/user.schema.json"
+title: Detection
+description: Données d'un utilisateur
+type: object
+properties:
+    id:
+        description: Numéro d'identification
+        type: integer
+
+    time:
+        description: Temps ou a eu lieu la détections
+        type: string
+
+    accuracy:
+        description: Score de la détection
+        type: integer
+
+    T_LOGS_id:
+        description: Clée étrangère vers la table logs
+        type: integer
+
+    T_LABELS_id:
+        description: Cmée étrangère vers la table labels
+        type: integer
+
+required:
+    - time
+    - accuracy
+    - T_LOGS_id
+    - T_LABELS_id

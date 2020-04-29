@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://localhost/user.schema.json",
+  "title": "Labels",
+  "description": "Données d'un utilisateur",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Numéro d'identification",
+      "type": "integer"
+    },
+    "name": {
+      "description": "Nom de la classe",
+      "type": "string"
+    },
+    "type": {
+      "description": "Type de classe",
+      "type": "string"
+    },
+    "dangereux": {
+      "description": "boolean indiquant si la classe est dangereuse",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "name",
+    "type",
+    "dangereux"
+  ]
+}

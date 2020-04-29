@@ -1,0 +1,41 @@
+$schema: http://json-schema.org/draft-07/schema#
+$id: "http://localhost/user.schema.json"
+title: Video
+description: Données d'une vidéo
+type: object
+properties:
+    id:
+       description: Numéro d'identification
+       type: number
+
+    title:
+        description: Titre de la vidéo
+        type: string
+
+    path:
+        description: chemin de la vidéo
+        type: string
+
+    datetime_start:
+        description: Jours et heure de début de la vidéo
+        type: string
+
+    datetime_end:
+        description: Jours et heure de fin de la vidéo
+        type: string
+
+    duration:
+        description: Durée de la vidéo
+        type: string
+
+    video_type:
+        description: Type de la vidéo
+        type: number
+
+required:
+    - title
+    - path
+    - datetime_start
+    - datetime_end
+    - duration
+    - video_type

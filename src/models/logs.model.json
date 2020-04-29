@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://localhost/user.schema.json",
+  "title": "Logs",
+  "description": "Données d'un utilisateur",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Numéro d'identification",
+      "type": "integer"
+    },
+    "number_detections": {
+      "description": "Nombre de détection",
+      "type": "integer"
+    },
+    "T_VIDEO_id": {
+      "description": "clée étrangère référançant sur la table vidéo",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "id",
+    "number_detections",
+    "T_VIDEO_id"
+  ]
+}

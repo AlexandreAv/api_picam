@@ -12,9 +12,11 @@
     "start": "node ./bin/www.js",
     "restart": "DEBUG=api-picam:* nodemon bin/www.js",
     "restart debug": "DEBUG=* nodemon bin/www.js",
-    "eslint-src": "eslint --fix app.js bin/www.js src/datasources",
-    "prettier": "prettier \"src/**/*.js\"",
-    "prettier-test": "prettier \"test/**/*.js\""
+    "eslint-src": "eslint  src/**/*.js",
+    "eslint-test": "eslint  test/**/*.js",
+    "prettier": "prettier --write '**/*.js'",
+    "yml-json": "yaml2json src/models/yml --pretty --save --outputs /src/models/json",
+    "yml-json-watch": "yaml2json src/models --pretty --save --watch"
   },
   "keywords": [
     "API"
@@ -22,16 +24,22 @@
   "author": "Alexandre Rangom",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.19.2",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.3",
     "mocha": "^7.1.1",
+    "nock": "^12.0.3",
     "nodemon": "^2.0.3",
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "yamljs": "^0.3.0"
   },
   "dependencies": {
+    "ajv": "^6.12.2",
+    "bcrypt": "^4.0.1",
     "cookie-parser": "^1.4.5",
     "debug": "^4.1.1",
     "ejs": "^3.1.2",

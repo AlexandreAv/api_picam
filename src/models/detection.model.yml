@@ -1,5 +1,6 @@
+# TODO ajouter des patterns (expressions régulières à tous les schemas )
+
 $schema: http://json-schema.org/draft-07/schema#
-$id: "http://localhost/user.schema.json"
 title: Detection
 description: Données d'un utilisateur
 type: object

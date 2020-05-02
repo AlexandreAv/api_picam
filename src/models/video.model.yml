@@ -1,5 +1,4 @@
 $schema: http://json-schema.org/draft-07/schema#
-$id: "http://localhost/user.schema.json"
 title: Video
 description: Données d'une vidéo
 type: object

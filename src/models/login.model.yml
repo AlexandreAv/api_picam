@@ -1,0 +1,17 @@
+$schema: http://json-schema.org/draft-07/schema#
+title: Login
+description: Donnée pour se login en tant qu'utilisateur
+type: object
+properties:
+    email:
+        description: Email de l'utilisateur
+        type: string
+
+    pass:
+        description: Mot de passe de l'utilisateur
+        type: string
+
+required:
+    - email
+    - pass
+

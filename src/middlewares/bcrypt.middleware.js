@@ -1,8 +1,7 @@
 const bcrypt = require('bcrypt');
 
-const saltRounds = 10;
-
 function encrypt(req, res, next) {
+    const saltRounds = 10;
     const { pass } = req.body;
 
     bcrypt.hash(pass, saltRounds).then((hash) => {
@@ -16,12 +15,14 @@ function decrypt(req, res, next) {
     const { hash } = req.body;
 
     bcrypt.compare(pass, hash).then((result) => {
-        if (result) req.body.isSame = true;
-        else req.body.isSame = false;
-        next();
+        if (result) next();
+        else {
+            res.status(401).send({ message: 'Incorrect password' });
+        }
     });
 }
 
 module.exports = {
     encrypt,
+    decrypt,
 };

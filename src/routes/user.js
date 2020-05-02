@@ -5,12 +5,9 @@ const userController = require('../controllers/user.controller');
 
 const router = express.Router();
 
-/* GET users listing. */
-router.get('/', (req, res) => {});
-
 /* POST users listing. */
 router.post(
-    '/user',
+    '/',
     ajwMiddleware.validation,
     bcryptMiddleware.encrypt,
     userController.userRegister,

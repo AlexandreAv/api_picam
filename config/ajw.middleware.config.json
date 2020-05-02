@@ -1,5 +1,6 @@
 {
     "userModel": {"method": "POST","routes":"/user", "path": "src/models/user.model.json"},
+   "loginModel": {"method":  "POST", "routes": "/login", "path": "src/models/login.model.json"},
     "detectionModel": {"method": "POST","routes":"/detection", "path": "src/models/detection.model.json"},
     "videoModel": {"method": "POST","routes":"/video", "path": "src/models/video.model.json"},
     "logsModel": {"method": "POST","routes":"/logs", "path": "src/models/logs.model.json"},

@@ -14,28 +14,31 @@ function loadConfig(configObject) {
     const workConfig = { ...configObject };
 
     Object.entries(workConfig).forEach(async (entry) => {
-        const [value] = entry;
+        const [key, value] = entry;
         const { path, method, routes } = value;
 
-        const schema = await readFilePromise(path).catch((err) => {
-            debug(err);
-        });
+        const bufferSchema = await readFilePromise(path, 'utf8').catch(
+            (err) => {
+                debug(err);
+            },
+        );
 
-        objectAjv.addSchema(schema, `${method}_${routes}`);
+        const jsonSchema = JSON.parse(bufferSchema);
+        objectAjv.addSchema(jsonSchema, `${method}_${routes}`);
     });
 }
 
 loadConfig(config);
 
 function validation(req, res, next) {
-    const { url, method, body } = req;
-    const objectUrl = new URL(url, `http://${req.headers.host}`);
-    const { pathname } = objectUrl;
-    const validate = objectAjv.getSchema(`${method}_${pathname}`);
+    const { originalUrl, method, body } = req;
+    const validate = objectAjv.getSchema(`${method}_${originalUrl}`);
 
     if (validate(body)) next();
     else {
-        res.status(400).send(httpStatus['400_MESSAGE']);
+        res.status(400).send('Veuillez envoyer bien formater vos données');
+        debug('Un client a été jarté ici');
+        debug(body);
     }
 }
 
